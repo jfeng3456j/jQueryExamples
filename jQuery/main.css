@@ -1,0 +1,102 @@
+body {
+  background-color: #191919;
+  color: white;
+  padding: 60px;
+}
+
+h1 {
+  font-weight: normal;
+  margin-bottom: 30px;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  background-color: #83ac69;
+  margin-top: 40px;
+}
+
+.spandiego {
+  color: greenyellow;
+  border: 1px solid lightgreen;
+}
+
+.wrap {
+  background-color: #445c36;
+  padding: 30px;
+  margin: 5px;
+}
+
+/*------------ Table styles ---------*/
+
+table {
+  max-width: 600px;
+  margin-top: 60px;
+}
+
+table a {
+  color: #588ab4;
+}
+
+table a:visited {
+  color: #0249ac;
+}
+
+table a:hover {
+  color: #9accf5;
+}
+
+caption {
+  font-size: 1.4em;
+  margin-bottom: 20px;
+}
+
+td {
+  padding: 10px;
+  background-color: #242424;
+}
+
+/*------------ Color Guides ---------*/
+
+.inside td:first-of-type,
+.inside span {
+  color: #ff8000;
+}
+.outside td:first-of-type,
+.outside span {
+  color: #83ac69;
+}
+.around td:first-of-type,
+.around span {
+  color: #de84ff;
+}
+.removal td:first-of-type,
+.removal span {
+  color: #e32299;
+}
+.replacement td:first-of-type,
+.replacement span {
+  color: #36a39b;
+}
+
+.traversal td:first-of-type,
+.traversal span {
+  color: #ff8000;
+}
+.misc td:first-of-type,
+.misc span {
+  color: #83ac69;
+}
+.filtering td:first-of-type,
+.filtering span {
+  color: #de84ff;
+}
+.numbers {
+  margin: 40px 0 0 0;
+  background-color: #262525;
+  padding: 15px;
+}
+.numbers li {
+  margin: 10px 0 0 0;
+  list-style: none;
+}

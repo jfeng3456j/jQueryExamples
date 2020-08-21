@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Intro to jQuery</title>
+        <link href="../main.css" rel="stylesheet" type="text/css" />
+        <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+
+        <h1>Effects</h1>
+        <p>JQuery includes a set effects with standard animations like hide,
+            fade, and slide. It also simplifies the creation of custom animation
+            as well. </p>
+
+
+        <div class="box">
+        </div>
+
+        <table>
+            <caption>Effect Methods Reference</caption>
+            <tr>
+                <th>Method</th>
+                <th>Description</th>
+                <th>Documentation</th>
+            </tr>
+            <tr class="custom">
+                <td>.animate()</td>
+                <td>Animates the specified set of CSS properties, plus any
+                    additional options arguments. Property values should be a
+                    number in order for animate() to work.</td>
+                <td><a href="http://api.jquery.com/animate/">.animate()</a></td>
+            </tr>
+        </table>
+
+        <script>             
+      $(document).ready( function() {
+
+          $(".box").animate(
+              //properties to animate
+              {
+                padding: 50,
+                // backgroundColor: "red" doesn't support by animate func
+                borderRadius: 500
+              },
+
+              //duration
+              "slow",
+
+              //easing function - expanding linear
+              //swing
+              "linear",
+
+
+              //complete function
+              function () {
+                // alert('completed')
+              }
+          )
+      
+        }); // close the ready event
+  </script>
+    </body>
+</html>

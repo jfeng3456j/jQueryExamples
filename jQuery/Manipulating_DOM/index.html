@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>jQuery Manipuluating DOM</title>
+        <link href="../main.css" rel="stylesheet" type="text/css" />
+        <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+
+        <h1>Manipulating the DOM</h1>
+        <p>One awesome benefit of jQuery is being able to change the DOM. There
+            are several types of ways we can manipulate the DOM with jQuery:</p>
+        <ul>
+            <li class="inside"><span>Inside</span></li>
+            <li class="outside"><span>Outside</span></li>
+            <li class="around"><span>Around</span></li>
+            <li class="removal"><span>Removal</span></li>
+            <li class="replacement"><span>Replacement</span></li>
+        </ul>
+
+        <p><span class="spandiego">Where am I?</span></p>
+
+        <div class="box">
+        </div>
+
+        <table>
+            <caption>DOM Methods Reference</caption>
+            <tr>
+                <th>Method</th>
+                <th>Description</th>
+                <th>Documentation</th>
+            </tr>
+            <tr class="inside">
+                <td>.text()</td>
+                <td>If used without an argument, .text() returns an element's
+                    text without the HTML tag. It also accepts a string value to
+                    set an element's text, or a function. </td>
+                <td><a href="http://api.jquery.com/text/">.text()</a></td>
+            </tr>
+            <tr class="inside">
+                <td>.html()</td>
+                <td>If used without an argument, .html() returns an element's
+                    HTML. It also accepts a string value to to replace an
+                    element's HTML, or a function. </td>
+                <td><a href="http://api.jquery.com/html/">.html()</a></td>
+            </tr>
+            <tr class="inside">
+                <td>.append()</td>
+                <td>Inserts content as the last child of the selected
+                    element(s). Accepted arguments: DOM elements, HTML strings,
+                    arrays of elements, and functions.</td>
+                <td><a href="http://api.jquery.com/append/">.append()</a></td>
+            </tr>
+            <tr class="inside">
+                <td>.prepend()</td>
+                <td>Inserts content as the first child of the selected
+                    element(s). Accepted arguments: DOM elements, HTML strings,
+                    arrays of elements, and functions.</td>
+                <td><a href="http://api.jquery.com/append/">.append()</a></td>
+            </tr>
+            <tr class="outside">
+                <td>.before()</td>
+                <td>Inserts content before each selected element(s). Accepted
+                    arguments: DOM elements, HTML strings, arrays of elements,
+                    and functions.</td>
+                <td><a href="http://api.jquery.com/before/">.before()</a></td>
+            </tr>
+            <tr class="outside">
+                <td>.after()</td>
+                <td>Inserts content after the selected element(s). Accepted
+                    arguments: DOM elements, HTML strings, arrays of elements,
+                    and functions.</td>
+                <td><a href="http://api.jquery.com/after/">.after()</a></td>
+            </tr>
+            <tr class="around">
+                <td>wrap()</td>
+                <td>Wraps an HTML element around <em>each</em> of the selected
+                    elements. Accepted arguments: DOM elements, HTML strings,
+                    arrays of elements, and functions.</td>
+                <td><a href="http://api.jquery.com/wrap/">wrap();</a></td>
+            </tr>
+            <tr class="around">
+                <td>wrapAll()</td>
+                <td>Wraps an HTML element around the all of the selected
+                    elements. Accepted arguments: DOM elements, HTML strings,
+                    arrays of elements, and functions.</td>
+                <td><a href="http://api.jquery.com/wrapAll/">wrapAll();</a></td>
+            </tr>
+            <tr class="removal">
+                <td>.remove()</td>
+                <td>Removes the selected element(s) from the DOM, and any
+                    elements inside of it.</td>
+                <td><a href="http://api.jquery.com/remove/">.remove()</a></td>
+            </tr>
+            <tr class="removal">
+                <td>.unwrap()</td>
+                <td>Removes the parents of selected element(s) from the DOM, and
+                    any elements inside of it. </td>
+                <td><a href="http://api.jquery.com/unwrap/">.unwrap()</a></td>
+            </tr>
+            <tr class="replacement">
+                <td>.replaceAll()</td>
+                <td>Uses the selected element(s) to replace the target
+                    element(s). Accepts a selector, jQuery Object, DOM elment,
+                    or array.</td>
+                <td><a href="http://api.jquery.com/replaceAll/">.replaceAll()</a></td>
+            </tr>
+            <tr class="replacement">
+                <td>.replaceWith()</td>
+                <td>Replace the selected element(s) with provided content and
+                    return the set of removed elements.</td>
+                <td><a href="http://api.jquery.com/replaceWith/">.replaceAll()</a></td>
+            </tr>
+        </table>
+
+        <script>
+      $(document).ready( function() {
+        //----inside-----
+        // alert($("p:first").text()); //getter, get the text
+
+        // $("h1:first").text("Using the Text Method"); //setting the text
+
+        // alert($("h1:first").html()); retrieving the text
+
+        // alert($("ul").html()) getting all the html inside ul
+
+        //--------------------------------------------------------
+        var spandiego = $(".spandiego");
+
+        function wrapIt(element) {
+            $(element).wrap("<div class='wrap'></div>");
+            // $(element).wrapAll("<div class='wrap'></div>");
+        }
+        
+
+        //--outside--------
+        // $("ul").append(spandiego); //add to last
+        // $("ul).prepend(spandiego) //add to the first
+
+        // $("ul").before(spandiego); //before ul
+
+        // $("ul").after(spandiego) //after ul
+
+        //---around---------
+
+        wrapIt("ul");
+
+        spandiego.parent().css("border","1px solid red");
+
+
+       
+      }); /* close the ready event */
+    
+  </script>
+    </body>
+</html>

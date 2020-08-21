@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Intro to jQquery</title>
+        <link href="../main.css" rel="stylesheet" type="text/css" />
+        <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <h1>Introduction to jQuery</h1>
+
+        <div class="box">
+
+        </div>
+
+        <script>
+        $(document).ready(function () {
+            "use strict";
+        
+        $(".box").click(function() {
+            $(this).fadeOut();
+        });
+
+        $(".box").click(function () {
+            $(this).fadeIn();
+       
+        });
+        });
+    </script>
+    </body>
+</html>

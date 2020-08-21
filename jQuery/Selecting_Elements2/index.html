@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=, initial-scale=1.0">
+        <title>Intro to jQuery Selector</title>
+
+        <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link href="../main.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>jQuery Selectors</h1>
+
+        <p>Just like when you write cSS, in <em>jQuery</em> you need to start by
+            targeting the element you want to affect. luckily, when selecting
+            elements wth <em>jQuery</em> it is much like writing a cSS selector.</p>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+
+        <table>
+            <caption>jQuery CSS Reference</caption>
+
+            <tr>
+                <th>Selector</th>
+                <th>Description</th>
+            </tr>
+
+            <tr class="selector">
+                <td>.className</td>
+                <td>Selects all element with the specified class</td>
+            </tr>
+
+            <tr class="selector">
+                <td>#idName</td>
+                <td>Selects an element with the specified ID</td>
+            </tr>
+
+            <tr class="selector">
+                <td>*</td>
+                <td>Universal selector; selects every elemnt in the document</td>
+            </tr>
+
+            <tr class="selector">
+                <td>element</td>
+                <td>Selects every element of the specified type</td>
+            </tr>
+
+            <tr class="selector">
+                <td>parent > child</td>
+                <td>Selects allc hildren of the parent element</td>
+            </tr>
+
+            <tr class="selector">
+                <td>anscestor descendant</td>
+                <td>Selects all descendants of the parent element</td>
+            </tr>
+
+            <tr class="selector">
+                <td>previous + next</td>
+                <td>Selects the next sibling of the previous element</td>
+            </tr>
+
+            <tr class="selector">
+                <td>previous ~ siblings</td>
+                <td>Selects all siblings of the element</td>
+            </tr>
+            <tr class="filters">
+                <td>:odd</td>
+                <td>Filters the current selector to only include odd numbered
+                    elements</td>
+            </tr>
+
+            <tr class="filters">
+                <td>:even</td>
+                <td>Filters the current selector to only include the even
+                    numbered matches</td>
+            </tr>
+
+            <tr class="filters">
+                <td>:first</td>
+                <td>Filters the current selectors to nliy include the first
+                    match</td>
+            </tr>
+
+            <tr class="filters">
+                <td>:parent</td>
+                <td>Filters the current selector to only include the element if
+                    it is an element of that type AND a parent</td>
+            </tr>
+            <tr class="filters">
+                <td>:not()</td>
+                <td>Filters the current selector so that it doesn't include the
+                    selector passed to not() as an argument</td>
+            </tr>
+        </table>
+
+        <script>
+            $(document).ready(function () {
+                $(".box:even").css("border","2px solid red");
+                $("div:odd").css("backgroundColor","yellow");
+                $("tr:parent").css("backgroundColor","red");
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Red Abbey Resort: Home</title>
+        <!--<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>-->
+        <link href="styles/main.css" rel="stylesheet" type="text/css"
+            media="screen">
+        <script type="text/javascript" src="//use.typekit.net/tap0lfn.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+        <script src="scripts/jquery.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div class="landing">
+            <nav class="mainNav">
+                <ul>
+                    <li><a href="#services">Services</a>
+                        <span class="additional">Offerings and prices</span>
+                    </li>
+                    <li><a href="#">About</a>
+                        <span class="additional">History of the Abbey</span>
+                    </li>
+                    <li><a href="#reservations">Reservations</a>
+                        <span class="additional" id="reservations-additional">Rooms
+                            &amp; availability</span>
+                    </li>
+                </ul>
+            </nav>
+            <div class="center">
+                <h1>Red Abbey Resort</h1>
+                <h2>Timeless luxury awaits.</h2>
+            </div>
+        </div>
+        <div class="secondaryContent">
+            <p>No matter how you choose to spend your time at the Red Abbey
+                Resort, rest assured that you will enjoy the timeless luxury of
+                a place untouched by the demands of the world.</p>
+            <h2>Services and Ammenities</h2>
+            <p>A few of our guest's favorite services are listed below. A full
+                list and prices are available on our <a href="#">services</a>
+                page.</p>
+            <ul>
+                <li>Butler Service</li>
+                <li>24 hour room service</li>
+                <li>Terrace Conservatory</li>
+                <li>Private Dining</li>
+                <li>Garden Views</li>
+                <li>Weddings</li>
+            </ul>
+            <p>Interested in staying with us? <a href="#">Book your room today!</a></p>
+            <div class="contact">
+                <h2>Contact Us</h2>
+                <form class="contact-form">
+                    <p><label>First Name* <input id="fname" type="text"
+                                class="required"></label></p>
+                    <p><label>Last Name* <input id="lname" type="text"
+                                class="required"></label></p>
+                    <p><label>Phone <input type="text"></label></p>
+                    <p><label>Email* <input id="email" type="email"
+                                class="required"></label></p>
+                    <p class="required-message hide-required-message">Please
+                        fill out required fields.</p>
+                    <p><button value="submit" type="submit">Submit Request</button></p>
+                    <p><small><strong>* Required</strong></small></p>
+                </form>
+            </div>
+        </div>
+
+        <script>
+
+        $(document).ready(function () {
+            $(".contact-form").submit(function (event) {
+                var $required = $(".required");
+                var $requiredMessage = $(".required-message");
+
+                var $fname = $("#fname")
+                var $lname = $("#lname");
+                var $email = $("#email");
+                
+                var $contactFormRequired = [$fname,$lname,$email];
+
+                for (var i = 0; i <$contactFormRequired.length; i++) {
+                    var reqField = $contactFormRequired[i].val(); // .val() returns the value
+
+                    if (reqField.length == 0 ) {
+                        event.preventDefault(); //stop the default behavior, stop the clicking of button
+                        $requiredMessage.removeClass('hide-required-message'); //remove tab class
+                        $requiredMessage.addClass('showrequired-message'); // a new class with css style from main.css
+
+                        $required.parent().addClass("required-styles")
+                    }
+
+                }
+
+
+            })
+         
+        }); // close ready event 
+      </script>
+    </body>
+</html>
